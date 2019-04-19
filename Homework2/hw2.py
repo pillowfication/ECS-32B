@@ -3,19 +3,21 @@
 
 class QueueFE:
     def __init__(self):
-        raise NotImplementedError
+        self.items = []
 
     def isEmpty(self):
-        raise NotImplementedError
+        return self.items == []
 
     def enqueue(self, item):
-        raise NotImplementedError
+        # Push the item to the end of the List, which is the tail of the Queue
+        self.items.append(item)
 
     def dequeue(self):
-        raise NotImplementedError
+        # Pop/Shift an item from the start of the List, which is the head of the Queue
+        return self.items.pop(0)
 
     def size(self):
-        raise NotImplementedError
+        return len(self.items)
 
 
 # Problem 2
