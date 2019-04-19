@@ -131,4 +131,18 @@ class UnorderedList:
 
     # Problem 5
     def removeMin(self):
-        raise NotImplementedError
+        # Do nothing if there are no elements in the list
+        if self.isEmpty():
+            return
+
+        # Find the smallest item in the list
+        current, next = self.head, self.head.getNext()
+        smallest = current.getData()
+        while next is not None:
+            current, next = next, next.getNext()
+            if current.getData() < smallest:
+                smallest = current.getData()
+
+        # Remove the smallest item and return it
+        self.remove(smallest)
+        return smallest

@@ -28,7 +28,7 @@ class Stack:
         self.ulist = UnorderedList()
 
      def isEmpty(self):
-        return self.ulist.size() == 0
+        return self.ulist.isEmpty()
 
      def push(self, item):
         self.ulist.append(item)
@@ -53,7 +53,7 @@ class Queue:
         self.ulist = UnorderedList()
 
     def isEmpty(self):
-        return self.ulist.size() == 0
+        return self.ulist.isEmpty()
 
     def enqueue(self, item):
         self.ulist.append(item)
@@ -71,7 +71,7 @@ class Deque:
         self.ulist = UnorderedList()
 
     def isEmpty(self):
-        return self.ulist.size() == 0
+        return self.ulist.isEmpty()
 
     def addFront(self, item):
         # The start of the UnorderedList is the head of the Deque
