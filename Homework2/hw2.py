@@ -1,3 +1,4 @@
+from UnorderedList import UnorderedList
 
 # Problem 1
 
@@ -24,22 +25,26 @@ class QueueFE:
 
 class Stack:
      def __init__(self):
-        raise NotImplementedError
+        self.ulist = UnorderedList()
 
      def isEmpty(self):
-        raise NotImplementedError
+        return self.ulist.size() == 0
 
      def push(self, item):
-        raise NotImplementedError
+        self.ulist.append(item)
 
      def pop(self):
-        raise NotImplementedError
+        # Note: UnorderedList.pop() is not implemented (https://piazza.com/class/jtqbsk4spmk58r?cid=70)
+        return self.ulist.pop(self.ulist.size() - 1)
 
      def peek(self):
-        raise NotImplementedError
+        # Note: UnorderedList.pop() is not implemented (https://piazza.com/class/jtqbsk4spmk58r?cid=70)
+        item = self.ulist.pop(self.ulist.size() - 1)
+        self.ulist.append(item)
+        return item
 
      def size(self):
-        raise NotImplementedError
+        return self.ulist.size()
 
 # Problem 3
 
