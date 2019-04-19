@@ -50,19 +50,19 @@ class Stack:
 
 class Queue:
     def __init__(self):
-        raise NotImplementedError
+        self.ulist = UnorderedList()
 
     def isEmpty(self):
-        raise NotImplementedError
+        return self.ulist.size() == 0
 
     def enqueue(self, item):
-        raise NotImplementedError
+        self.ulist.append(item)
 
     def dequeue(self):
-        raise NotImplementedError
+        return self.ulist.pop(0)
 
     def size(self):
-        raise NotImplementedError
+        return self.ulist.size()
 
 # Problem 4
 
