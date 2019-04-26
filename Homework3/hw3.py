@@ -15,7 +15,7 @@ def findSmallest(items):
     if (length == 1):
         return items[0]
 
-    # Return the first element OR the smallest of the remaining elements
+    # Recursive step
     first = items[0]
     nextSmallest = findSmallest(items[1:])
     return first if first <= nextSmallest else nextSmallest
@@ -53,4 +53,10 @@ def ladder(rungs):
 # Problem 4
 
 def recPal(str):
-    raise NotImplementedError
+    # Base case
+    # This assumes that the empty string is vacuously a palindrome.
+    if str == '':
+        return True
+
+    # Recursive step
+    return str[0] == str[-1] and recPal(str[1:-1])
