@@ -33,7 +33,22 @@ def findValue(value, linkedList):
 # Problems 3 and 5
 
 def ladder(rungs):
-    raise NotImplementedError
+    # Solutions fall into 2 categories
+    # - Starts with 1 followed by a solution for (n - 1)
+    # - Starts with 2 followed by a solution for (n - 2)
+    #
+    # Let S(n) be the number of solutions for a given n. Thus S follows the
+    # recurrence relation:
+    #   S(n) = S(n-1) + S(n-2)
+
+    # Base cases
+    # This assumes there is exactly 1 way to climb a ladder with 0 rungs.
+    # That way S(n) corresponds to F(n+1) where F(n) is the nth Fibonacci number.
+    if rungs <= 1:
+        return 1
+
+    # Recursive step
+    return ladder(rungs - 1) + ladder(rungs - 2)
 
 # Problem 4
 
