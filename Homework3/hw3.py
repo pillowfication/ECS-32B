@@ -2,6 +2,8 @@
 # Markus Tran
 # mkhtran@ucdavis.edu
 
+from Node import Node
+
 # Problem 1
 
 def findSmallest(items):
@@ -21,7 +23,12 @@ def findSmallest(items):
 # Problem 2
 
 def findValue(value, linkedList):
-    raise NotImplementedError
+    # Base case
+    if linkedList == None:
+        return False
+
+    # Recursive step
+    return linkedList.getData() == value or findValue(value, linkedList.getNext())
 
 # Problems 3 and 5
 
