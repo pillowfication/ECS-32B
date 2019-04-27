@@ -11,6 +11,7 @@ DIR=${@%/}
 git checkout -B $DIR
 git rm -rf .
 git checkout HEAD -- $DIR
+git checkout HEAD -- .gitignore
 
 # Move all the files to the root of the repository
 mv $DIR/* .
