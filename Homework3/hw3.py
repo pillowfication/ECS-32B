@@ -54,7 +54,7 @@ def ladder(rungs, knownResults = {}):
 
     # Recursive step
     else:
-        result = ladder(rungs - 1) + ladder(rungs - 2)
+        result = ladder(rungs - 1, knownResults) + ladder(rungs - 2, knownResults)
 
     knownResults[rungs] = result
     return result
