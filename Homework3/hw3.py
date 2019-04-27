@@ -32,7 +32,12 @@ def findValue(value, linkedList):
 
 # Problems 3 and 5
 
-def ladder(rungs):
+def ladder(rungs, knownResults = {}):
+    # Check cache
+    if rungs in knownResults:
+        return knownResults[rungs]
+    result = None
+
     # Solutions fall into 2 categories
     # - Starts with 1 followed by a solution for (n - 1)
     # - Starts with 2 followed by a solution for (n - 2)
@@ -45,10 +50,14 @@ def ladder(rungs):
     # This assumes there is exactly 1 way to climb a ladder with 0 rungs.
     # That way S(n) corresponds to F(n+1) where F(n) is the nth Fibonacci number.
     if rungs <= 1:
-        return 1
+        result = 1
 
     # Recursive step
-    return ladder(rungs - 1) + ladder(rungs - 2)
+    else:
+        result = ladder(rungs - 1) + ladder(rungs - 2)
+
+    knownResults[rungs] = result
+    return result
 
 # Problem 4
 
