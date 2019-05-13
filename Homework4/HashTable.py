@@ -1,3 +1,6 @@
+# Your name and email here
+# Markus Tran
+# mkhtran@ucdavis.edu
 
 class HashTable:
     def __init__(self):
