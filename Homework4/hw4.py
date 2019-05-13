@@ -14,4 +14,18 @@ def sequentialSearchRec(alist, item, index=0):
 # Problem 2
 
 def binarySearchRec(alist, item, first=None, last=None):
-    raise NotImplementedError
+    # Default parameters
+    if first == None or last == None:
+        (first, last) = (first or 0, last or len(alist) - 1)
+
+    if first > last:
+        return False # OR return -1
+    midpoint = (first + last) // 2
+    if alist[midpoint] == item:
+        return True  # OR return midpoint
+
+    if item < alist[midpoint]:
+        (first, last) = (first, midpoint - 1)
+    else:
+        (first, last) = (midpoint + 1, last)
+    return binarySearchRec(alist, item, first, last)
