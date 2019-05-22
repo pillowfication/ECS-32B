@@ -21,12 +21,10 @@ def insertionSort(alist):
 #   http://interactivepython.org/courselib/static/pythonds/SortSearch/TheBubbleSort.html
 
 def bubbleSort(alist):
-    for passnum in range(len(alist)-1,0,-1):
+    for passnum in range(len(alist) - 1, 0, -1):
         for i in range(passnum):
-            if alist[i]>alist[i+1]:
-                temp = alist[i]
-                alist[i] = alist[i+1]
-                alist[i+1] = temp
+            if alist[i] < alist[i + 1]:
+                (alist[i], alist[i + 1]) = (alist[i + 1], alist[i])
 
 # Problem 3
 #   Selection Sort as shown in class: Lecture 19, Slide 45
