@@ -41,22 +41,31 @@ def selectionSortK(alist, k):
 #   http://interactivepython.org/courselib/static/pythonds/SortSearch/TheMergeSort.html
 
 def mergeSort(alist, workspace=None, start=None, end=None):
-
-    #### You can change this code if you want to, but it sufficient to implement a solution.
-
     if workspace is None:
-        workspace = [None] * len(alist)
         start = 0
-        end = len(alist) #### Note that end is not a valid index into the array -- it's one past the last element!
+        end = len(alist)
+        workspace = [None] * end
 
-    if end-start <= 1:
+    if end - start <= 1:
         return
 
-    midpoint = (start+end)//2
+    midpoint = (start + end) // 2
 
     mergeSort(alist, workspace, start, midpoint)
     mergeSort(alist, workspace, midpoint, end)
 
-    #### From here on, the code will look very similar to the code from the textbook
-    ####    Be sure you understand what the code is doing before you copy it over!
-    ####    Remember to copy the data back from the workspace!
+    # Merge into the workspace
+    pointer1 = start
+    pointer2 = midpoint
+
+    for i in range(start, end):
+        if pointer1 != midpoint and (pointer2 == end or alist[pointer1] <= alist[pointer2]):
+            workspace[i] = alist[pointer1]
+            pointer1 += 1
+        else:
+            workspace[i] = alist[pointer2]
+            pointer2 += 1
+
+    # Copy workspace into array
+    for i in range(start, end):
+        alist[i] = workspace[i]
