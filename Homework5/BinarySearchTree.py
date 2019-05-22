@@ -67,17 +67,25 @@ class BinarySearchTree:
             self.root = TreeNode(key,val)
         self.size = self.size + 1
 
-    def _put(self,key,val,currentNode):
+    def _put(self, key, val, currentNode):
         if key < currentNode.key:
             if currentNode.hasLeftChild():
-                   self._put(key,val,currentNode.leftChild)
+                self._put(key, val, currentNode.leftChild)
             else:
-                   currentNode.leftChild = TreeNode(key,val,parent=currentNode)
-        else:
+                currentNode.leftChild = TreeNode(key, val, parent=currentNode)
+        elif key > currentNode.key:
             if currentNode.hasRightChild():
-                   self._put(key,val,currentNode.rightChild)
+                self._put(key, val, currentNode.rightChild)
             else:
-                   currentNode.rightChild = TreeNode(key,val,parent=currentNode)
+                currentNode.rightChild = TreeNode(key, val, parent=currentNode)
+        else:
+            currentNode.replaceNodeData(
+                key,
+                val,
+                currentNode.leftChild,
+                currentNode.rightChild
+            )
+            self.size -= 1 # To cancel out the change in `put()`
 
     def __setitem__(self,k,v):
        self.put(k,v)
