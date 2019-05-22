@@ -1,18 +1,21 @@
+# Your name and email here
+# Markus Tran
+# mkhtran@ucdavis.edu
 
 # Problem 1
 #   http://interactivepython.org/courselib/static/pythonds/SortSearch/TheInsertionSort.html
 
 def insertionSort(alist):
-    for index in range(1,len(alist)):
+    for index in range(1, len(alist)):
 
         currentvalue = alist[index]
         position = index
 
-        while position>0 and alist[position-1]>currentvalue:
-            alist[position]=alist[position-1]
-            position = position-1
+        while position > 0 and alist[position - 1] < currentvalue:
+            alist[position] = alist[position - 1]
+            position = position - 1
 
-        alist[position]=currentvalue
+        alist[position] = currentvalue
 
 # Problem 2
 #   http://interactivepython.org/courselib/static/pythonds/SortSearch/TheBubbleSort.html
