@@ -30,14 +30,12 @@ def bubbleSort(alist):
 #   Selection Sort as shown in class: Lecture 19, Slide 45
 
 def selectionSortK(alist, k):
-    for i in range(0,len(alist) - 1):
+    for i in range(0, k):
         min = i
         for j in range(i + 1, len(alist)):
             if alist[j] < alist[min]:
                 min = j
-        temp = alist[i]
-        alist[i] = alist[min]
-        alist[min] = temp
+        (alist[i], alist[min]) = (alist[min], alist[i])
 
 # Problem 4
 #   http://interactivepython.org/courselib/static/pythonds/SortSearch/TheMergeSort.html
