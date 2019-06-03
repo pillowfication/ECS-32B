@@ -29,10 +29,10 @@ def merge(left, right):
 
 ## selection sort not from book - note that we're just calling it selectionSort!
 def selectionSort(alist):
-    for i in range(0,len(alist) - 1):
+    for i in range(0, len(alist) - 1):
         min = i
         for j in range(i + 1, len(alist)):
-            if alist[j] < alist[min]:
+            if alist[j][1] < alist[min][1]:
                 min = j
         temp = alist[i]
         alist[i] = alist[min]
