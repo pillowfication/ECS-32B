@@ -49,7 +49,7 @@ problem3_part3 = [ 35, 24, 29, 7, 19, 17, 1, 4, 3 ]
 
 # Problem 4
 
-problem4_inorder_traversal = []
-problem4_preorder_traversal = []
-problem4_postorder_traversal = []
-problem4_levelorder_traversal = []
+problem4_inorder_traversal = [ 1, 2, 3, 9, 22, 34, 36, 28, 42, 56, 55, 60, 77, 79, 80 ]
+problem4_preorder_traversal = [ 22, 9, 2, 1, 3, 42, 28, 36, 34, 60, 55, 56, 79, 77, 80 ]
+problem4_postorder_traversal = [ 1, 3, 2, 9, 34, 36, 28, 56, 55, 70, 80, 79, 60, 42, 22 ]
+problem4_levelorder_traversal = [ 22, 9, 42, 2, 28, 60, 1, 3, 36, 55, 79, 34, 56, 77, 80 ]
