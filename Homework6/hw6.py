@@ -43,12 +43,20 @@ def inorder(tree):
 # Problem 3
 
 def printexp(tree):
-    sVal = ""
-    if tree:
-        sVal = '(' + printexp(tree.getLeftChild())
-        sVal = sVal + str(tree.getRootVal())
-        sVal = sVal + printexp(tree.getRightChild())+')'
-    return sVal
+    # If this is true, then the current node is an operation and has both a
+    # leftChild and rightChild that must be wrapped in parentheses.
+    if tree.getLeftChild() is not None:
+        return (
+            "(" +
+            printexp(tree.getLeftChild()) +
+            tree.getRootVal() +
+            printexp(tree.getRightChild()) +
+            ")"
+        )
+
+    # Otherwise, it is a singular operand.
+    else:
+        return str(tree.getRootVal())
 
 # Problem 4
 
