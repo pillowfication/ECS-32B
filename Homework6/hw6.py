@@ -1,6 +1,7 @@
 # ECS32B Spring 2019 Homework 6
 # Your name here!
-
+# Markus Tran
+# mkhtran@ucdavis.edu
 
 # Grab some helper functions into the current namespace
 from hw6_tools import *
@@ -8,7 +9,13 @@ from hw6_tools import *
 
 # Problem 1
 
-expTree = None
+def p(leftOperand, operator, rightOperand):
+    tree = ExpTree(operator)
+    tree.setLeftChild(leftOperand if isinstance(leftOperand, ExpTree) else ExpTree(leftOperand))
+    tree.setRightChild(rightOperand if isinstance(rightOperand, ExpTree) else ExpTree(rightOperand))
+    return tree
+
+expTree = p(p(3, '+', p(1, '/', 2)), '*', p(5, '-', 2))
 
 # Problem 2
 
