@@ -20,13 +20,25 @@ expTree = p(p(3, '+', p(1, '/', 2)), '*', p(5, '-', 2))
 # Problem 2
 
 def postorder(tree):
-    raise NotImplementedError
+    if tree.getLeftChild() is not None:
+        postorder(tree.getLeftChild())
+    if tree.getRightChild() is not None:
+        postorder(tree.getRightChild())
+    print(tree.getRootVal(), end=' ')
 
 def preorder(tree):
-    raise NotImplementedError
+    print(tree.getRootVal(), end=' ')
+    if tree.getLeftChild() is not None:
+        preorder(tree.getLeftChild())
+    if tree.getRightChild() is not None:
+        preorder(tree.getRightChild())
 
 def inorder(tree):
-    raise NotImplementedError
+    if tree.getLeftChild() is not None:
+        inorder(tree.getLeftChild())
+    print(tree.getRootVal(), end=' ')
+    if tree.getRightChild() is not None:
+        inorder(tree.getRightChild())
 
 # Problem 3
 
