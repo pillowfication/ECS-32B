@@ -15,7 +15,7 @@ def p(leftOperand, operator, rightOperand):
     tree.setRightChild(rightOperand if isinstance(rightOperand, ExpTree) else ExpTree(rightOperand))
     return tree
 
-expTree = p(p(3, '+', p(1, '/', 2)), '*', p(5, '-', 2))
+expTree = p(p(3, "+", p(1, "/", 2)), "*", p(5, "-", 2))
 
 # Problem 2
 
@@ -36,7 +36,7 @@ def preorder(tree):
 def inorder(tree):
     if tree.getLeftChild() is not None:
         inorder(tree.getLeftChild())
-    print(tree.getRootVal(), end=' ')
+    print(tree.getRootVal(), end=" ")
     if tree.getRightChild() is not None:
         inorder(tree.getRightChild())
 
@@ -66,3 +66,18 @@ problem4_depth_first_traversal = [ 0, 1, 3, 4, 8, 7, 2, 6, 5 ]
 # Problem 5
 
 flights = Graph()
+flights.addEdge("LAX", "PHX", 98)
+flights.addEdge("SFO", "LAS", 98)
+flights.addEdge("SFO", "LAX", 49)
+flights.addEdge("SFO", "PHX", 198)
+flights.addEdge("SMF", "LAS", 198)
+flights.addEdge("SMF", "LAX", 98)
+flights.addEdge("SMF", "SFO", 47)
+
+origin = "SMF"
+dijkstra(flights, flights.getVertex(origin))
+print("From To Cost")
+for destination in flights.getVertices():
+    if destination == origin:
+        continue
+    print(f"{origin} {destination} {flights.getVertex(destination).getDistance()}")
