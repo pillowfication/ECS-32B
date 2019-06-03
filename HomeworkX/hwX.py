@@ -10,8 +10,8 @@ def mergesort(mlist):
     if len(mlist) < 2:
         return mlist
     else:
-        mid = len(mlist)//2
-        return merge( mergesort(mlist[:mid]), mergesort(mlist[mid:]))
+        mid = len(mlist) // 2
+        return merge(mergesort(mlist[:mid]), mergesort(mlist[mid:]))
 
 # merge two sorted lists
 def merge(left, right):
@@ -19,7 +19,7 @@ def merge(left, right):
         return right
     elif right == []:
         return left
-    elif left[0] < right[0]:
+    elif left[0][1] <= right[0][1]:
         return [left[0]] + merge(left[1:], right)
     else:
         return [right[0]] + merge(left, right[1:])
