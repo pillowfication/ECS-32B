@@ -60,8 +60,8 @@ def printexp(tree):
 
 # Problem 4
 
-problem4_breadth_first_traversal = [0,]
-problem4_depth_first_traversal = [0,]
+problem4_breadth_first_traversal = [ 0, 1, 2, 5, 3, 4, 6, 8, 7 ]
+problem4_depth_first_traversal = [ 0, 1, 3, 4, 8, 7, 2, 6, 5 ]
 
 # Problem 5
 
