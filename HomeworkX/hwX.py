@@ -43,9 +43,9 @@ def selectionSort(alist):
 # Must be valid Python lists!
 # example: problem3_part1 = [1,2,3,4]
 
-problem3_part1 = []
-problem3_part2 = []
-problem3_part3 = []
+problem3_part1 = [ 89, 35, 29, 24, 19, 17, 1, 7, 3, 4 ]
+problem3_part2 = [ 89, 63, 29, 24, 35, 17, 1, 7, 3, 4, 19 ]
+problem3_part3 = [ 35, 24, 29, 7, 19, 17, 1, 4, 3 ]
 
 # Problem 4
 
